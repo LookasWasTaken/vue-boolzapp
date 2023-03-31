@@ -32,7 +32,7 @@ body {
 .container_left{
     width: 30%;
     min-width: 200px;
-    height: 500px;
+    height: 100%;
     background-color: var(--wa-notification);
 }
 
@@ -44,4 +44,12 @@ body {
 .app_top{
     height: 70px;
     background-color: var(--wa-canvas);
+}
+
+#app_header_right{
+    border-left: 1px solid var(--wa-icons);
+}
+
+.icon_color{
+    color: var(--wa-icons);
 }

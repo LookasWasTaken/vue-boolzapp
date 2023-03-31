@@ -30,17 +30,58 @@
 
     <div id="app">
 
-        <div class="container">
-            <div class="d-flex">
-                <div class="container_left"></div>
-                <!-- /#container_left -->
-                <div class="container_right">
-                    <div id="app_header" class="app_top"></div>
-                    <!-- /#app_header -->
+        <div class="container d-flex">
+            <div class="container_left">
+                <div id="app_header_left" class="app_top d-flex justify-content-between align-items-center px-3">
+                    <div class="user d-flex align-items-center ">
+                        <img src="./assets/img/avatar_1.jpg" class="rounded-circle me-3" width=50 alt="">
+                        <div class="contact_data">
+                            <h5 class="m-0">nome tuo</h5>
+                        </div>
+                    </div>
+                    <!-- /.contact_chat -->
+                    <ul id="contact_buttons" class="icon_color list-unstyled d-flex justify-content-between align-items-center gap-3 m-0">
+                        <li>
+                            <i class="fa-solid fa-circle-notch fa-fw fa-lg"></i>
+                        </li>
+                        <li
+                        ><i class="fa-solid fa-message fa-fw fa-lg"></i>
+                    </li>
+                        <li>
+                            <i class="fa-solid fa-ellipsis-vertical fa-fw fa-lg"></i>
+                        </li>
+                    </ul>
+                    <!-- #.contact_buttons -->
                 </div>
-                <!-- /#container_right -->
+                <!-- /#app_header_left -->
             </div>
-            <!-- /#d-flex -->
+            <!-- /#container_left -->
+            <div class="container_right">
+                <div id="app_header_right" class="app_top d-flex justify-content-between align-items-center px-3">
+                    <div class="contact_chat d-flex align-items-center ">
+                        <img src="./assets/img/avatar_1.jpg" class="rounded-circle me-3" width=50 alt="">
+                        <div class="contact_data">
+                            <h5 class="m-0">nome del contatto che ti sta ignorando</h5>
+                            <span class="m-0">accesso che toglierò perchè tilta la gente</span>
+                        </div>
+                    </div>
+                    <!-- /.contact_chat -->
+                    <ul id="contact_buttons" class="icon_color list-unstyled d-flex justify-content-between align-items-center gap-3 m-0">
+                        <li>
+                            <i class="fa-solid fa-magnifying-glass fa-fw fa-lg"></i>
+                        </li>
+                        <li
+                        ><i class="fa-solid fa-paperclip fa-fw fa-lg"></i>
+                    </li>
+                        <li>
+                            <i class="fa-solid fa-ellipsis-vertical fa-fw fa-lg"></i>
+                        </li>
+                    </ul>
+                    <!-- #.contact_buttons -->
+                </div>
+                <!-- /#app_header_right -->
+            </div>
+            <!-- /#container_right -->
         </div>
         <!-- /#container -->
 
