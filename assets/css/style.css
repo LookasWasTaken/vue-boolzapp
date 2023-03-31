@@ -1,0 +1,12 @@
+:root {
+    --font-whatsapp: Helvetica, sans-serif;
+    --wa-accent: #009688;
+    --wa-neutral: #dadbd3;
+    --wa-notification: #8edafc;
+    --wa-canvas: #eaeaea;
+    --wa-primary: #d5f9ba;
+    --wa-bg-message: #f3eeea;
+    --wa-icons: #b1b1b1;
+    --wa-white: #ffffff;
+    --wa-black: #1e1e1e;
+}
