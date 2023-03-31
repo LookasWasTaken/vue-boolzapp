@@ -7,6 +7,7 @@
     --wa-primary: #d5f9ba;
     --wa-bg-message: #f3eeea;
     --wa-icons: #b1b1b1;
+    --wa-icons-dark: #6b7376;
     --wa-white: #ffffff;
     --wa-black: #1e1e1e;
 }
@@ -14,6 +15,14 @@
 body {
     height: 100vh;
     background: linear-gradient(180deg, var(--wa-accent) 0%, var(--wa-accent) 15%, var(--wa-neutral) 15%, var(--wa-neutral) 100%);
+}
+
+.icon_color{
+    color: var(--wa-icons);
+}
+
+.icon_color_dark{
+    color: var(--wa-icons-dark);
 }
 
 #app{
@@ -50,6 +59,16 @@ body {
     border-left: 1px solid var(--wa-icons);
 }
 
-.icon_color{
-    color: var(--wa-icons);
+#app_main_chat{
+    height: calc(100% - 140px);
 }
+
+#app_bottom_right{
+    height: 70px;
+    background-color: var(--wa-bg-message);
+}
+
+#app_bottom_right input{
+    width: 80%;
+}
+
