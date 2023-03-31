@@ -47,7 +47,7 @@ body {
 
 .container_right{
     width: 70%;
-    background-color: var(--wa-icons);
+    border-left: 1px solid var(--wa-icons);
 }
 
 .app_top{
@@ -55,12 +55,9 @@ body {
     background-color: var(--wa-canvas);
 }
 
-#app_header_right{
-    border-left: 1px solid var(--wa-icons);
-}
-
 #app_main_chat{
     height: calc(100% - 140px);
+    background-image: url(/assets/img/mine.jpg);
 }
 
 #app_bottom_right{
