@@ -10,11 +10,10 @@ const { createApp } = Vue;
 createApp({
   data() {
     return {
-      message: "we compa",
       contacts: [
         {
             name: 'Alexandro Fioretti',
-            avatar: './img/avatar_1.png',
+            avatar: './assets/img/avatar_8.jpg',
             visible: true,
             messages: [
                 {
@@ -36,7 +35,7 @@ createApp({
         },
         {
             name: 'Mattia Volpe',
-            avatar: './img/avatar_2.png',
+            avatar: './assets/img/avatar_8.jpg',
             visible: true,
             messages: [
                 {
@@ -58,7 +57,7 @@ createApp({
         },
         {
             name: 'Fabio Pacifici',
-            avatar: './img/avatar_3.png',
+            avatar: './assets/img/avatar_3.jpg',
             visible: true,
             messages: [
                 {
@@ -80,7 +79,7 @@ createApp({
         },
         {
             name: 'Paolo Zampa',
-            avatar: './img/avatar_4.png',
+            avatar: './assets/img/avatar_8.jpg',
             visible: true,
             messages: [
                 {
@@ -97,7 +96,7 @@ createApp({
         },
         {
             name: 'Donato Riccio',
-            avatar: './img/avatar_5.png',
+            avatar: './assets/img/avatar_8.jpg',
             visible: true,
             messages: [
                 {
@@ -114,7 +113,7 @@ createApp({
         },
         {
             name: 'Giuliano Gostinfini',
-            avatar: './img/avatar_5.png',
+            avatar: './assets/img/avatar_8.jpg',
             visible: true,
             messages: [
                 {
@@ -136,7 +135,7 @@ createApp({
         },
         {
             name: 'Gianni Morandi',
-            avatar: './img/avatar_7.png',
+            avatar: './assets/img/avatar_8.jpg',
             visible: true,
             messages: [
                 {
@@ -153,7 +152,7 @@ createApp({
         },
         {
             name: 'Mark Zuckerberg',
-            avatar: './img/avatar_8.png',
+            avatar: './assets/img/avatar_8.jpg',
             visible: true,
             messages: [
                 {
