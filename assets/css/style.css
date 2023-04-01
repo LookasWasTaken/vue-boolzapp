@@ -98,6 +98,9 @@ body {
     overflow-y: auto;
     height: calc(100% - 205px);
     background-color: var(--wa-white);
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
 }
 
 .active{

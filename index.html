@@ -34,7 +34,7 @@
             <div class="container_left">
                 <div id="app_header_left" class="app_top d-flex justify-content-between align-items-center px-3">
                     <div class="user d-flex align-items-center ">
-                        <img src="./assets/img/avatar_1.jpg" class="rounded-circle me-3" width=50 alt="">
+                        <img src="https://ca.slack-edge.com/T91QPE3BP-U04L1H29RBR-8ebb8f2ba714-512" class="rounded-circle me-3" width=50 alt="">
                         <div class="contact_data">
                             <h6 class="m-0">Luca Piacentini</h6>
                         </div>
@@ -76,9 +76,9 @@
                 </div>
                 <!-- /#search_box -->
                 <div id="contact_list">
-                    <div v-for="(contact, index) in contacts" class="user_contact p-3 d-flex justify-content-between">
+                    <div @click="selectUser(index)" v-for="(contact, index) in contacts" class="user_contact p-3 d-flex justify-content-between" :class="index === activeUser ? 'active' : ''">
                         <div class="user_info d-flex">
-                            <img :src="contact.avatar" width=50 class="rounded-circle img-fluid" alt="">
+                            <img :src="contact.avatar" width=50 class="rounded-circle img-fluid align-self-center" alt="">
                             <div class="d-flex flex-column ms-2">
                                 <h6>{{contact.name}}</h6>
                                 <span>{{contact.messages[contact.messages.length-1].message}}</span>
@@ -98,10 +98,10 @@
             <div class="container_right">
                 <div id="app_header_right" class="app_top d-flex justify-content-between align-items-center px-3">
                     <div class="contact_chat d-flex align-items-center ">
-                        <img src="./assets/img/avatar_1.jpg" class="rounded-circle me-3" width=50 alt="">
+                        <img :src="contacts[activeUser].avatar" class="rounded-circle me-3" width=50 alt="">
                         <div class="contact_data">
-                            <h6 class="m-0">Nome Contatto</h6>
-                            <span class="m-0">Ultimo Accesso</span>
+                            <h6 class="m-0">{{contacts[activeUser].name}}</h6>
+                            <span class="m-0">Last seen today at {{contacts[activeUser].messages[contacts[activeUser].messages.length-1].date.slice(11, 16)}}</span>
                         </div>
                     </div>
                     <!-- /.contact_chat -->
