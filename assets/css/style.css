@@ -51,6 +51,21 @@ body {
     height: 85px;
 }
 
+.box_push{
+    aspect-ratio: 1/1;
+    width: 50px;
+    border-radius: 50px;
+    background-color: var(--wa-white);
+}
+
+.fa-bell-slash{
+    color: var(--wa-notification);
+}
+
+.link_push a{
+    color: var(--wa-icons-dark);
+}
+
 .container_right{
     width: 70%;
     border-left: 1px solid var(--wa-icons);
@@ -59,6 +74,10 @@ body {
 .app_top{
     height: 70px;
     background-color: var(--wa-canvas);
+}
+
+.contact_data span{
+    color: var(--wa-icons);
 }
 
 #app_main_chat{
