@@ -10,6 +10,7 @@ const { createApp } = Vue;
 createApp({
   data() {
     return {
+      message: "we compa",
       contacts: [
         {
             name: 'Alexandro Fioretti',
@@ -173,6 +174,6 @@ createApp({
             ],
         }
     ]
-    };
+    }
   },
 }).mount("#app");

@@ -1,5 +1,5 @@
 :root {
-    --font-whatsapp: Helvetica, sans-serif;
+    --wa-font: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
     --wa-accent: #009688;
     --wa-neutral: #dadbd3;
     --wa-notification: #8edafc;
@@ -17,6 +17,8 @@
 body {
     height: 100vh;
     background: linear-gradient(180deg, var(--wa-accent) 0%, var(--wa-accent) 15%, var(--wa-neutral) 15%, var(--wa-neutral) 100%);
+    font-family: var(--wa-font);
+    -webkit-font-smoothing: antialiased;
 }
 
 .icon_color{
