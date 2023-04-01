@@ -10,6 +10,7 @@
     --wa-icons-dark: #6b7376;
     --wa-white: #ffffff;
     --wa-black: #1e1e1e;
+    --wa-double-checked: #2d80c8;
 }
 
 body {
@@ -60,6 +61,42 @@ body {
     background-image: url(/assets/img/mine.jpg);
 }
 
+#app_main_chat .message{
+    height: 65px;
+}
+
+.message_received, .message_sent{
+    width: 45%;
+    border-radius: 9px;
+    padding-left: 1rem;
+}
+
+.message_received{
+    background-color: var(--wa-white);
+}
+
+.message_sent{
+    margin-left: auto;
+    background-color: var(--wa-primary);
+}
+
+.text_option{
+    align-self: flex-end;
+    padding-right: 0.5rem;
+    color: var(--wa-icons);
+}
+
+.text_hour{
+    font-size: x-small;
+    padding-right: 0.5rem;
+    color: var(--wa-icons);
+}
+
+.text_hour span{
+    padding-left: 0.4rem;
+    color: var(--wa-double-checked);
+}
+
 #app_bottom_right{
     height: 70px;
     background-color: var(--wa-bg-message);
@@ -68,4 +105,3 @@ body {
 #app_bottom_right input{
     width: 80%;
 }
-
