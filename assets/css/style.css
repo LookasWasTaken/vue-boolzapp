@@ -10,6 +10,7 @@
     --wa-icons-dark: #6b7376;
     --wa-white: #ffffff;
     --wa-black: #1e1e1e;
+    --wa--light-black: #3e3e3e;
     --wa-double-checked: #2d80c8;
 }
 
@@ -41,9 +42,8 @@ body {
 
 .container_left{
     width: 30%;
-    min-width: 200px;
+    min-width: 280px;
     height: 100%;
-    background-color: var(--wa-black);
 }
 
 #push_notifier{
@@ -96,9 +96,24 @@ body {
     outline-width: 0;
 }
 
+#contact_list{
+    overflow-y: auto;
+    height: calc(100% - 205px);
+    background-color: var(--wa-white);
+}
+
+.active{
+    background-color: var(--wa-canvas);
+}
+
+.user_date span{
+    font-size: 0.7rem;
+}
+
 .container_right{
     width: 70%;
     border-left: 1px solid var(--wa-icons);
+    min-width: 480px;
 }
 
 .app_top{
@@ -112,6 +127,7 @@ body {
 
 #app_main_chat{
     height: calc(100% - 140px);
+    overflow-y: auto;
     background-image: url(/assets/img/mine.jpg);
 }
 
@@ -124,6 +140,7 @@ body {
     border-radius: 9px;
     padding-left: 1rem;
     min-height: 45px;
+    color: var(--wa--light-black);
 }
 
 .message_received{
