@@ -110,6 +110,24 @@ body {
     font-size: 0.7rem;
 }
 
+#contact_list::-webkit-scrollbar {
+    width: 10px;
+}
+
+#contact_list::-webkit-scrollbar-thumb {
+    background-color: var(--wa-canvas);
+    border-radius: 20px;
+}
+
+#contact_list::-webkit-scrollbar-thumb:hover {
+    background-color: var(--wa-icons);
+}
+
+#contact_list::-webkit-scrollbar-track {
+    background-color: var(--wa-white);
+    border-radius: 10px;
+}
+
 .container_right{
     width: 70%;
     border-left: 1px solid var(--wa-icons);
@@ -129,6 +147,24 @@ body {
     height: calc(100% - 140px);
     overflow-y: auto;
     background-image: url(/assets/img/mine.jpg);
+}
+
+#app_main_chat::-webkit-scrollbar {
+    width: 10px;
+}
+
+#app_main_chat::-webkit-scrollbar-thumb {
+    background-color: var(--wa-canvas);
+    border-radius: 20px;
+}
+
+#app_main_chat::-webkit-scrollbar-thumb:hover {
+    background-color: var(--wa-icons);
+}
+
+#app_main_chat::-webkit-scrollbar-track {
+    background-color: var(--wa-white);
+    border-radius: 10px;
 }
 
 #app_main_chat .message{
