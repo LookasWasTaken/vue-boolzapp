@@ -30,6 +30,10 @@ body {
     color: var(--wa-icons-dark);
 }
 
+.fa-check{
+    color: var(--wa-double-checked);
+}
+
 #app{
     position: relative;
     height: 100%;
@@ -227,6 +231,29 @@ body {
     color: var(--wa-icons);
 }
 
+.fa-angle-down{
+    color: var(--wa-icons);
+}
+
+.fa-angle-down:hover{
+    color: var(--wa-icons-dark);
+}
+
+.dropdown-toggle::after {
+    display: none !important;
+}
+
+.dropdown-menu {
+    --bs-dropdown-color: var(--wa-accent);
+    --bs-dropdown-bg: var(--wa-canvas);
+    --bs-dropdown-border-color: var(--wa-icons);
+    --bs-dropdown-link-color: var(--wa--light-black);
+    --bs-dropdown-link-hover-color: var(--wa--black);
+    --bs-dropdown-link-hover-bg: var(--wa-canvas);
+    --bs-dropdown-link-active-color: var(--wa-canvas);
+    --bs-dropdown-link-active-bg: var(--wa-accent);
+}
+
 .text_hour{
     font-size: x-small;
     padding-right: 0.5rem;
@@ -236,12 +263,6 @@ body {
 .text_hour span{
     padding-left: 0.4rem;
     color: var(--wa-double-checked);
-}
-
-.double_check{
-    position: absolute;
-    top: 15%;
-    right: 10%;
 }
 
 #app_bottom_right{

@@ -159,7 +159,7 @@ createApp({
             {
               date: "10/01/2023 15:50:00",
               message: "Si Gianni, però è vecchia come canzone, no?",
-              status: "received",
+              status: "sent",
             },
           ],
         },
@@ -206,8 +206,7 @@ createApp({
         },
         {
           name: "Shakira",
-          avatar:
-            "https://www.aceshowbiz.com/images/photo/shakira.jpg",
+          avatar: "https://www.aceshowbiz.com/images/photo/shakira.jpg",
           visible: true,
           messages: [
             {
@@ -229,15 +228,26 @@ createApp({
     selectUser(index) {
       this.activeUser = index;
     },
-    reply(){
+    reply() {
       setTimeout(() => {
-        this.contacts[this.activeUser].messages.push({message: "Okay", date: "10/02/2023 15:03:32", status: "received"})
-      }, "1500");
+        this.contacts[this.activeUser].messages.push({
+          message: "Okay",
+          date: "10/02/2023 15:03:32",
+          status: "received",
+        });
+      }, 1300);
     },
     sendMessage() {
-      this.contacts[this.activeUser].messages.push({message: this.input_user, date: "10/02/2023 14:38:32", status: "sent"})
+      this.contacts[this.activeUser].messages.push({
+        message: this.input_user,
+        date: "10/02/2023 14:38:32",
+        status: "sent",
+      });
       this.input_user = "";
       this.reply();
+    },
+    deleteMessage(index){
+      this.contacts[this.activeUser].messages.splice((this.contacts[this.activeUser].messages.length -1) -index, 1)
     }
   },
 }).mount("#app");
