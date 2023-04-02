@@ -141,6 +141,7 @@ body {
 
 .user_contact{
     cursor: pointer;
+    display: flex;
 }
 
 .user_info > div > span, .user_date > span{

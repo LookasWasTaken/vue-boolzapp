@@ -79,7 +79,7 @@
                 </div>
                 <!-- /#search_box -->
                 <div id="contact_list">
-                    <div @click="selectUser(index)" v-for="(contact, index) in contacts" class="user_contact p-3 d-flex justify-content-between" :class="index === activeUser ? 'active' : ''">
+                    <div @click="selectUser(index)" v-show="contact.name.includes(search)" v-for="(contact, index) in contacts" class="user_contact p-3 justify-content-between" :class="index === activeUser ? 'active' : ''">
                         <div class="user_info d-flex">
                             <img :src="contact.avatar" width=50 class="rounded-circle img-fluid align-self-center" alt="">
                             <div class="d-flex flex-column ms-2">

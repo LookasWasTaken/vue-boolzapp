@@ -12,6 +12,7 @@ createApp({
     return {
       activeUser: 0, // Proverò a cambiarlo in -1 ed aggiungere v-if v-else
       input_user: "",
+      search: "",
       contacts: [
         {
           name: "Alexandro Fioretti",
