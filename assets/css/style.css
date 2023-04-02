@@ -1,5 +1,6 @@
 :root {
     --wa-font: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    --wa-font-secondary: 'Roboto', sans-serif;
     --wa-accent: #009688;
     --wa-neutral: #dadbd3;
     --wa-notification: #8edafc;
@@ -17,7 +18,7 @@
 body {
     height: 100vh;
     background: linear-gradient(180deg, var(--wa-accent) 0%, var(--wa-accent) 15%, var(--wa-neutral) 15%, var(--wa-neutral) 100%);
-    font-family: var(--wa-font);
+    font-family: var(--wa-font-secondary);
     -webkit-font-smoothing: antialiased;
 }
 
@@ -234,6 +235,12 @@ body {
 .text_hour span{
     padding-left: 0.4rem;
     color: var(--wa-double-checked);
+}
+
+.double_check{
+    position: absolute;
+    top: 15%;
+    right: 10%;
 }
 
 #app_bottom_right{

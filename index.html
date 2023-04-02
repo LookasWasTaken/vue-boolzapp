@@ -18,7 +18,10 @@
         integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-
+        <!-- GOOGLE FONTS CDN -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;400&family=Odibee+Sans&family=Roboto:wght@100;300;500&display=swap" rel="stylesheet">
 
     <!-- EXTERNAL PERSONAL CSS -->
     <link rel="stylesheet" href="./assets/css/style.css">
@@ -34,7 +37,7 @@
             <div class="container_left">
                 <div id="app_header_left" class="app_top d-flex justify-content-between align-items-center px-3">
                     <div class="user d-flex align-items-center ">
-                        <img src="https://ca.slack-edge.com/T91QPE3BP-U04L1H29RBR-8ebb8f2ba714-512" class="rounded-circle me-3" width=50 alt="">
+                        <img src="https://ca.slack-edge.com/T91QPE3BP-U04L1H29RBR-8ebb8f2ba714-512" class="rounded-circle me-3" width=60 alt="">
                         <div class="contact_data">
                             <h6 class="m-0">Luca Piacentini</h6>
                         </div>
@@ -71,7 +74,7 @@
                         <label for="search_input" class="d-flex justify-content-between align-items-center px-3">
                             <i class="fa-solid fa-magnifying-glass fa-fw"></i>
                         </label>
-                        <input type="text" id="search_input" placeholder="Search">
+                        <input type="text" id="search_input" placeholder="Search" v-model="search">
                     </div>
                 </div>
                 <!-- /#search_box -->
@@ -120,68 +123,25 @@
                 </div>
                 <!-- /#app_header_right -->
                 <div id="app_main_chat" class="py-3 px-5 d-flex flex-column-reverse">
-                    <div class="message">
-                        <div class="message_received d-flex justify-content-between align-items-center">
-                            <span>Messaggio Ricevuto</span>
+                    <div class="message" v-for="(message, index) in contacts[activeUser].messages.slice().reverse()">
+                        <div :class="message.status === 'sent' ? 'message_sent' : 'message_received'" class="d-flex justify-content-between align-items-center">
+                            <span>{{message.message}}</span>
                             <div class="text_info d-flex flex-column">
                                 <div class="text_option"><i class="fa fa-angle-down" aria-hidden="true"></i></div>
                                 <!-- /.text_option -->
-                                <div class="text_hour">15.32</div>
+                                <div class="text_hour position-relative">{{message.date.slice(11, 16)}} <i v-if="message.status === 'sent'" class="fa-solid fa-check"></i><i v-if="message.status === 'sent'" class="fa-solid fa-check double_check"></i></div>
                                 <!-- /.text_hour -->
                             </div>
                             <!-- /.text_info -->
                         </div>
-                        <!-- /.message_received -->
+                        <!-- /.message_sent/received -->
                     </div>
-                    <!-- /.message -->
-                    <div class="message">
-                        <div class="message_sent d-flex justify-content-between align-items-center">
-                            <span>Messaggio Inviato</span>
-                            <div class="text_info d-flex flex-column">
-                                <div class="text_option"><i class="fa fa-angle-down" aria-hidden="true"></i></div>
-                                <!-- /.text_optiono -->
-                                <div class="text_hour">15.33<span><i class="fa-solid fa-check"></i></span></div>
-                                <!-- /.text_hour -->
-                            </div>
-                            <!-- /.text_info -->
-                        </div>
-                        <!-- /.message_sent -->
-                    </div>
-                    <!-- /.message -->
-                    <div class="message">
-                        <div class="message_sent d-flex justify-content-between align-items-center">
-                            <span>Messaggio Inviato</span>
-                            <div class="text_info d-flex flex-column">
-                                <div class="text_option"><i class="fa fa-angle-down" aria-hidden="true"></i></div>
-                                <!-- /.text_optiono -->
-                                <div class="text_hour">15.33<span><i class="fa-solid fa-check"></i></span></div>
-                                <!-- /.text_hour -->
-                            </div>
-                            <!-- /.text_info -->
-                        </div>
-                        <!-- /.message_sent -->
-                    </div>
-                    <!-- /.message -->
-                    <div class="message">
-                        <div class="message_received d-flex justify-content-between align-items-center">
-                            <span>Messaggio Ricevuto</span>
-                            <div class="text_info d-flex flex-column">
-                                <div class="text_option"><i class="fa fa-angle-down" aria-hidden="true"></i></div>
-                                <!-- /.text_option -->
-                                <div class="text_hour">15.32</div>
-                                <!-- /.text_hour -->
-                            </div>
-                            <!-- /.text_info -->
-                        </div>
-                        <!-- /.message_received -->
-                    </div>
-                    <!-- /.message -->
                 </div>
                 <!-- /#app_main_chat -->
                 <div id="app_bottom_right" class="d-flex align-items-center justify-content-around">
                     <i class="fa-regular fa-face-smile icon_color_dark fa-lg"></i>
-                    <input type="text" class="form-control" name="newMessage" id="newMessage"
-                        placeholder="Type a message">
+                    <input type="text" class="form-control" v-model="input_user" name="newMessage" id="newMessage"
+                        placeholder="Type a message" @keydown.enter="sendMessage()">
                     <i class="fa-solid fa-microphone icon_color_dark fa-lg"></i>
                 </div>
             </div>

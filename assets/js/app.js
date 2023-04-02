@@ -11,6 +11,7 @@ createApp({
   data() {
     return {
       activeUser: 0, // Proverò a cambiarlo in -1 ed aggiungere v-if v-else
+      input_user: "",
       contacts: [
         {
           name: "Alexandro Fioretti",
@@ -227,5 +228,15 @@ createApp({
     selectUser(index) {
       this.activeUser = index;
     },
+    reply(){
+      setTimeout(() => {
+        this.contacts[this.activeUser].messages.push({message: "Okay", date: "10/02/2023 15:03:32", status: "received"})
+      }, "1500");
+    },
+    sendMessage() {
+      this.contacts[this.activeUser].messages.push({message: this.input_user, date: "10/02/2023 14:38:32", status: "sent"})
+      this.input_user = "";
+      this.reply();
+    }
   },
 }).mount("#app");
