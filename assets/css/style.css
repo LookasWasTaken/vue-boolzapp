@@ -48,9 +48,18 @@ body {
     height: 100%;
 }
 
+#app_header_left{
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
+}
+
 #push_notifier{
     background-color: var(--wa-notification);
     height: 85px;
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
 }
 
 .box_push{
@@ -129,6 +138,10 @@ body {
     border-radius: 10px;
 }
 
+.user_contact{
+    cursor: pointer;
+}
+
 .user_info > div > span, .user_date > span{
     color: var(--wa-icons);
     font-size: 0.8rem;
@@ -138,6 +151,12 @@ body {
     width: 70%;
     border-left: 1px solid var(--wa-icons);
     min-width: 480px;
+}
+
+#app_header_right{
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
 }
 
 .app_top{
@@ -192,6 +211,12 @@ body {
 .message_sent{
     margin-left: auto;
     background-color: var(--wa-primary);
+}
+
+.text_info{
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
 }
 
 .text_option{
