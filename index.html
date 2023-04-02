@@ -53,8 +53,30 @@
                         </li>
                         <li><i class="fa-solid fa-message fa-fw fa-lg"></i>
                         </li>
-                        <li>
-                            <i class="fa-solid fa-ellipsis-vertical fa-fw fa-lg"></i>
+                        <li class="dropdown">
+                            <a class="dropdown-toggle icon_color" href="#" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                <i class="fa-solid fa-ellipsis-vertical fa-fw fa-lg"></i>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a class="dropdown-item" href="#"><i class="fa-solid fa-arrow-up-wide-short"></i>Filter</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#"><i class="fa-solid fa-star"></i>Starred Messages</a>
+                                </li>
+                                <hr>
+                                <li>
+                                    <a class="dropdown-item" href="#"><i class="fa-solid fa-circle-half-stroke"></i></i>Dark Mode</a>
+                                </li>
+                                <hr>
+                                <li>
+                                    <a class="dropdown-item" href="#"><i class="fa-solid fa-user"></i>Profile</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#"><i class="fa-solid fa-gear"></i>Settings</a>
+                                </li>
+                            </ul>
                         </li>
                     </ul>
                     <!-- #.contact_buttons -->
@@ -90,12 +112,15 @@
                                 alt="">
                             <div class="d-flex flex-column ms-2">
                                 <h6>{{contact.name}}</h6>
-                                <span v-if="contact.messages.length > 0">{{contact.messages[contact.messages.length-1].message}}</span>
+                                <span
+                                    v-if="contact.messages.length > 0">{{contact.messages[contact.messages.length-1].message}}</span>
                             </div>
                         </div>
                         <!-- /.user_info -->
                         <div class="user_date">
-                            <span v-if="contact.messages.length > 0">{{contact.messages[contact.messages.length-1].date.slice(11, 16)}}</span>
+                            <span
+                                v-if="contact.messages.length > 0">{{contact.messages[contact.messages.length-1].date.slice(11,
+                                16)}}</span>
                         </div>
                         <!-- /.user_date -->
                     </div>
@@ -113,7 +138,7 @@
                             <span v-if="contacts[activeUser].messages.length > 0" class="m-0">Last seen today at
                                 {{contacts[activeUser].messages[contacts[activeUser].messages.length-1].date.slice(11,
                                 16)}}</span>
-                                <span v-else class="m-0">Last seen today at 18:06</span>
+                            <span v-else class="m-0">Last seen today at 18:06</span>
                         </div>
                     </div>
                     <!-- /.contact_chat -->
@@ -122,10 +147,39 @@
                         <li>
                             <i class="fa-solid fa-magnifying-glass fa-fw fa-lg"></i>
                         </li>
-                        <li><i class="fa-solid fa-paperclip fa-fw fa-lg"></i>
+                        <li><i class="fa-solid fa-video fa-fw fa-lg"></i>
                         </li>
-                        <li>
-                            <i class="fa-solid fa-ellipsis-vertical fa-fw fa-lg"></i>
+                        <li><i class="fa-solid fa-phone fa-fw fa-lg"></i>
+                        </li>
+                        </li>
+                        <li class="dropdown">
+                            <a class="dropdown-toggle icon_color" href="#" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                <i class="fa-solid fa-ellipsis-vertical fa-fw fa-lg"></i>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a class="dropdown-item" href="#"><i class="fa-solid fa-volume-xmark"></i>Mute</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#"><i class="fa-solid fa-film"></i>Media</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#"><i class="fa-solid fa-file"></i>File</a>
+                                </li>
+                                <hr>
+                                <li>
+                                    <a class="dropdown-item" href="#"><i class="fa-solid fa-link"></i>Link</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#"><i class="fa-solid fa-lock"></i>
+                                        Encryption</a>
+                                </li>
+                                <hr>
+                                <li>
+                                    <a class="dropdown-item" href="#"><i class="fa-solid fa-people-group"></i></i>Groups</a>
+                                </li>
+                            </ul>
                         </li>
                     </ul>
                     <!-- #.contact_buttons -->
@@ -138,12 +192,40 @@
                             <span>{{message.message}}</span>
                             <div class="text_info d-flex flex-column">
                                 <div class="text_option dropdown">
-                                    <a class="dropdown-toggle" href="#" role="button"
-                                        data-bs-toggle="dropdown" aria-expanded="false">
+                                    <a class="dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                        aria-expanded="false">
                                         <i class="fa fa-angle-down fa-fw fa-xs" aria-hidden="true"></i>
                                     </a>
                                     <ul class="dropdown-menu">
-                                        <li><a @click="deleteMessage(index)" class="dropdown-item" href="#"><i class="fa-solid fa-trash"></i> Delete Message</a></li>
+                                        <li>
+                                            <a class="dropdown-item" href="#"><i class="fa-solid fa-reply"></i>Reply</a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="#"><i class="fa-solid fa-copy"></i>Copy</a>
+                                        </li>
+                                        <hr>
+                                        <li>
+                                            <a class="dropdown-item" href="#"><i
+                                                    class="fa-solid fa-face-smile"></i>Reactions</a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="#"><i
+                                                    class="fa-solid fa-share-from-square"></i>Forward</a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="#"><i
+                                                    class="fa-solid fa-star"></i>Important</a>
+                                        </li>
+                                        <hr>
+                                        <li>
+                                            <a @click="deleteMessage(index)" class="dropdown-item" href="#"><i
+                                                    class="fa-solid fa-trash"></i>Delete Message</a>
+                                        </li>
+                                        <hr>
+                                        <li>
+                                            <a class="dropdown-item" href="#"><i
+                                                    class="fa-solid fa-square-check"></i>Select</a>
+                                        </li>
                                     </ul>
                                 </div>
                                 <!-- /.text_option -->
@@ -157,10 +239,16 @@
                     </div>
                 </div>
                 <!-- /#app_main_chat -->
-                <div id="app_bottom_right" class="d-flex align-items-center justify-content-around">
-                    <i class="fa-regular fa-face-smile icon_color_dark fa-lg"></i>
-                    <input type="text" class="form-control" v-model="input_user" name="newMessage" id="newMessage"
+                <div id="app_bottom_right" class="px-2 d-flex align-items-center justify-content-around">
+                    <i class="fa-regular fa-face-smile icon_color_dark fa-lg"></i><i
+                        class="fa-solid fa-paperclip icon_color_dark fa-fw fa-lg"></i>
+                    <div class="w-80 d-flex">
+                        <input type="text" class="form-control" v-model="input_user" name="newMessage" id="newMessage"
                         placeholder="Type a message" @keydown.enter="sendMessage()">
+                        <label for="newMessage" class="d-flex justify-content-between align-items-center px-2">
+                            <i @click="sendMessage()" class="fa-solid fa-paper-plane icon_color_dark fa-fw"></i>
+                        </label>
+                    </div>
                     <i class="fa-solid fa-microphone icon_color_dark fa-lg"></i>
                 </div>
             </div>

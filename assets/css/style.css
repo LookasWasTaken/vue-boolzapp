@@ -30,6 +30,18 @@ body {
     color: var(--wa-icons-dark);
 }
 
+.w-80{
+    width: 80%;
+}
+
+a:hover{
+    color: var(--wa-icons);
+}
+
+.fa-ellipsis-vertical:hover{
+    color: var(--wa-icons-dark);
+}
+
 .fa-check{
     color: var(--wa-double-checked);
 }
@@ -255,6 +267,14 @@ body {
     --bs-dropdown-link-active-bg: var(--wa-accent);
 }
 
+.dropdown-menu li{
+    margin: 0.1rem 0;
+}
+
+.dropdown-menu li a i{
+    padding-right: 0.4rem;
+}
+
 .text_hour{
     font-size: x-small;
     padding-right: 0.5rem;
@@ -271,8 +291,31 @@ body {
     background-color: var(--wa-bg-message);
 }
 
-#app_bottom_right input{
-    width: 80%;
+#app_bottom_right label {
+    background-color: var(--wa-white);
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+    border: 1px solid var(--wa-icons);
+    border-left: 0;
+}
+
+#app_bottom_right label:hover{
+    cursor: pointer;
+}
+
+#app_bottom_right label:hover i{
+    color: var(--wa-accent);
+}
+
+#newMessage{
+    background-color: var(--wa-white);
+    border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border: 1px solid var(--wa-icons);
+    border-right: 0;
+    color: var(--wa-icons-dark);
 }
 
 #newMessage:focus{
