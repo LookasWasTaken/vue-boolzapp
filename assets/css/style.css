@@ -208,6 +208,7 @@ body {
     padding-left: 1rem;
     min-height: 45px;
     color: var(--wa--light-black);
+    margin: 0.3rem 0;
 }
 
 .message_received{

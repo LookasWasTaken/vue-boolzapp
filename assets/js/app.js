@@ -238,6 +238,9 @@ createApp({
       }, 1300);
     },
     sendMessage() {
+      if (this.input_user === ""){
+        return
+      }
       this.contacts[this.activeUser].messages.push({
         message: this.input_user,
         date: "10/02/2023 14:38:32",
