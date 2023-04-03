@@ -320,8 +320,8 @@ a:hover{
 }
 
 #newMessage:focus{
-    color: #212529;
-    background-color: #fff;
+    color: var(--wa--light-black);
+    background-color: var(--wa-white);
     border-color: var(--wa-icons);
     outline: 0;
     box-shadow: 0 0 0 0;
