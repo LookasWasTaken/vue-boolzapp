@@ -286,8 +286,6 @@ createApp({
         root.style.setProperty("--wa-double-checked", "#2d80c8")
         main.style.backgroundImage = "url(./assets/img/mine.jpg)"
       }
-
-     
     }
   },
 }).mount("#app");

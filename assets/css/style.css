@@ -280,6 +280,10 @@ a:hover{
     font-size: x-small;
     padding-right: 0.5rem;
     color: var(--wa-icons);
+    display: flex;
+    gap: 0.2rem;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .text_hour span{
