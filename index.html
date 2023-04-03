@@ -104,7 +104,7 @@
                 </div>
                 <!-- /#search_box -->
                 <div id="contact_list">
-                    <div @click="selectUser(index)" v-show="contact.name.toLowerCase().includes(search.toLowerCase())"
+                    <div @click="selectUser(index)" v-show="(contact.name.toLowerCase().includes(search.toLowerCase()) && search != '') || (contact.visible == true && search == '')"
                         v-for="(contact, index) in contacts" class="user_contact p-3 justify-content-between"
                         :class="index === activeUser ? 'active' : ''">
                         <div class="user_info d-flex">

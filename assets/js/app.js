@@ -255,6 +255,7 @@ createApp({
       }, 1100);
     },
     sendMessage() {
+      this.contacts[this.activeUser].visible = true;
       if (this.input_user === ""){
         return
       }
@@ -273,7 +274,8 @@ createApp({
       this.contacts[this.activeUser].messages = [];
     },
     deleteChat(){
-      this.contacts[this.activeUser] = [];
+      this.deleteMessages();
+      this.contacts[this.activeUser].visible = false;
     },
     darkMode(){
       this.dark = !this.dark
