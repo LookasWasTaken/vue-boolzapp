@@ -11,9 +11,31 @@ createApp({
   data() {
     return {
       dark: false,
-      activeUser: 0, // Proverò a cambiarlo in -1 ed aggiungere v-if v-else
+      activeUser: 0,
       input_user: "",
       search: "",
+      replies: [
+        "Okay",
+        "Sure",
+        "Understood",
+        "Perfect",
+        "All right",
+        "Talk to you later",
+        "No problem",
+        "Thank you",
+        "You're welcome",
+        "As you wish",
+        "I'm sorry, I can't",
+        "I'll get back to you later",
+        "Great idea",
+        "I don't understand",
+        "Can you repeat that?",
+        "Yes",
+        "No",
+        "Maybe",
+        "I don't know",
+        "Very interesting",
+      ],
       contacts: [
         {
           name: "Alexandro Fioretti",
@@ -154,12 +176,12 @@ createApp({
             {
               date: "10/01/2023 15:30:55",
               message:
-                "Luca, scusami, ma quindi non ti piace Fatti mandare dalla mamma?",
+                "Luca, I'm sorry, but so you don't like it Fatti mandare dalla mamma?",
               status: "received",
             },
             {
               date: "10/01/2023 15:50:00",
-              message: "Si Gianni, però è vecchia come canzone, no?",
+              message: "Yes Gianni, but it's as old as a song, isn't it?",
               status: "sent",
             },
           ],
@@ -195,7 +217,7 @@ createApp({
           messages: [
             {
               date: "10/01/2023 15:30:55",
-              message: "Sono un imbranato cronico, tnk u mate!",
+              message: "I'm a chronic bumbling, tnk u mate!",
               status: "received",
             },
             {
@@ -217,7 +239,7 @@ createApp({
             },
             {
               date: "10/01/2023 15:50:00",
-              message: "No tengo tiempo para ti",
+              message: "How about going out to dinner tonight?",
               status: "sent",
             },
           ],
@@ -231,12 +253,13 @@ createApp({
     },
     reply() {
       setTimeout(() => {
+        const randomIndex = Math.floor(Math.random() * this.replies.length);
         this.contacts[this.activeUser].messages.push({
-          message: "Okay",
+          message: this.replies[randomIndex],
           date: "10/02/2023 15:03:32",
           status: "received",
         });
-      }, 1300);
+      }, 1100);
     },
     sendMessage() {
       if (this.input_user === ""){
