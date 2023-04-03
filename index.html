@@ -67,7 +67,7 @@
                                 </li>
                                 <hr>
                                 <li>
-                                    <a class="dropdown-item" href="#"><i class="fa-solid fa-circle-half-stroke"></i></i>Dark Mode</a>
+                                    <a @click="darkMode()" class="dropdown-item" href="#"><i class="fa-solid fa-circle-half-stroke"></i></i>Dark Mode</a>
                                 </li>
                                 <hr>
                                 <li>
@@ -169,6 +169,13 @@
                                 </li>
                                 <hr>
                                 <li>
+                                    <a class="dropdown-item" href="#"><i class="fa-solid fa-trash"></i>Delete Message</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#"><i class="fa-solid fa-trash-can"></i>Delete Chat</a>
+                                </li>
+                                <hr>
+                                <li>
                                     <a class="dropdown-item" href="#"><i class="fa-solid fa-link"></i>Link</a>
                                 </li>
                                 <li>
@@ -243,13 +250,13 @@
                     <i class="fa-regular fa-face-smile icon_color_dark fa-lg"></i><i
                         class="fa-solid fa-paperclip icon_color_dark fa-fw fa-lg"></i>
                     <div class="w-80 d-flex">
-                        <input type="text" class="form-control" v-model="input_user" name="newMessage" id="newMessage"
+                        <input type="text" class="form-control" v-model.trim="input_user" name="newMessage" id="newMessage"
                         placeholder="Type a message" @keydown.enter="sendMessage()">
                         <label for="newMessage" class="d-flex justify-content-between align-items-center px-2">
-                            <i @click="sendMessage()" class="fa-solid fa-paper-plane icon_color_dark fa-fw"></i>
+                            <i v-if="input_user.trim() == ''" class="fa-solid fa-microphone icon_color_dark fa-lg"></i>
+                            <i v-else-if="input_user.trim() != ''" @click="sendMessage()" class="fa-solid fa-paper-plane icon_color_dark fa-fw"></i>
                         </label>
                     </div>
-                    <i class="fa-solid fa-microphone icon_color_dark fa-lg"></i>
                 </div>
             </div>
             <!-- /#app_bottom_right -->

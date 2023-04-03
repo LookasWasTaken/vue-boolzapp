@@ -114,6 +114,7 @@ a:hover{
     border: 1px solid var(--wa-icons);
     border-left: 0;
     color: var(--wa-icons-dark);
+    background-color: var(--wa-white);
 }
 
 #newMessage:focus-visible, #search_input:focus-visible{
@@ -324,4 +325,8 @@ a:hover{
     border-color: var(--wa-icons);
     outline: 0;
     box-shadow: 0 0 0 0;
+}
+
+h6{
+    color: var(--wa-black);
 }

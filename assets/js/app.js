@@ -10,6 +10,7 @@ const { createApp } = Vue;
 createApp({
   data() {
     return {
+      dark: false,
       activeUser: 0, // Proverò a cambiarlo in -1 ed aggiungere v-if v-else
       input_user: "",
       search: "",
@@ -251,6 +252,42 @@ createApp({
     },
     deleteMessage(index){
       this.contacts[this.activeUser].messages.splice((this.contacts[this.activeUser].messages.length -1) -index, 1)
+    },
+    darkMode(){
+      this.dark = !this.dark
+      const root = document.querySelector(":root");
+      const main = document.getElementById("app_main_chat")
+      if (this.dark != false){
+        root.style.setProperty("--wa-accent", "#075E54")
+        root.style.setProperty("--wa-neutral", "#121212")
+        root.style.setProperty("--wa-notification", "#35393b")
+        root.style.setProperty("--wa-canvas", "#0e0d0d")
+        root.style.setProperty("--wa-primary", "#075E54")
+        root.style.setProperty("--wa-bg-message", "#0e0d0d")
+        root.style.setProperty("--wa-icons", "#a0a0a0")
+        root.style.setProperty("--wa-icons-dark", "#73787a")
+        root.style.setProperty("--wa-white", "#121212")
+        root.style.setProperty("--wa-black", "#a4a8aa")
+        root.style.setProperty("--wa--light-black", "#a0a0a0")
+        root.style.setProperty("--wa-double-checked", "#2d80c8")
+        main.style.backgroundImage = "url(./assets/img/darkmine.jpg)"
+      } else {
+        root.style.setProperty("--wa-accent", "#009688")
+        root.style.setProperty("--wa-neutral", "#dadbd3")
+        root.style.setProperty("--wa-notification", "#8edafc")
+        root.style.setProperty("--wa-canvas", "#eaeaea")
+        root.style.setProperty("--wa-primary", "#d5f9ba")
+        root.style.setProperty("--wa-bg-message", "#f3eeea")
+        root.style.setProperty("--wa-icons", "#b1b1b1")
+        root.style.setProperty("--wa-icons-dark", "#6b7376")
+        root.style.setProperty("--wa-white", "#ffffff")
+        root.style.setProperty("--wa-black", "#1e1e1e")
+        root.style.setProperty("--wa--light-black", "#3e3e3e")
+        root.style.setProperty("--wa-double-checked", "#2d80c8")
+        main.style.backgroundImage = "url(./assets/img/mine.jpg)"
+      }
+
+     
     }
   },
 }).mount("#app");
